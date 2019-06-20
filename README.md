@@ -30,7 +30,7 @@ module.exports = {
 其实对于Vue前端来说，一共有三种实现懒加载的方式，只要达到异步按需请求vue组件的目的都可以成为路由懒加载。
 
 #### 1.vue异步组件技术
-vue-router配置路由，使用vue的[异步组件](https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6){:target="blank"}技术，可以实现按需加载。  
+vue-router配置路由，使用vue的[异步组件](https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6?_blank)技术，可以实现按需加载。  
 ```javascript
 {
     path: '/promisedemo',
@@ -40,9 +40,9 @@ vue-router配置路由，使用vue的[异步组件](https://cn.vuejs.org/v2/guid
 ```  
 
 #### 2.es6提案的import()
-这种异步加载的方式就是我之前做项目用的懒加载方式（需要webpack>2.4），具体配置可以看看我之前整理的[项目记录](https://github.com/Alexandermclean/Security-Cloud-Project/blob/master/Readme.md#1%E8%B7%AF%E7%94%B1router){:target="blank"}，import方式相比于require，import是编译时加载，输出的是对一个模块的引用，效率更高。
-* webpack官方文档：[webpack中使用import()](https://webpack.docschina.org/guides/code-splitting/#%E5%8A%A8%E6%80%81%E5%AF%BC%E5%85%A5-dynamic-imports-){:target="blank"}  
-* vue官方文档：[路由懒加载使用import()](https://router.vuejs.org/zh/guide/advanced/lazy-loading.html){:target="blank"}  
+这种异步加载的方式就是我之前做项目用的懒加载方式（需要webpack>2.4），具体配置可以看看我之前整理的[项目记录](https://github.com/Alexandermclean/Security-Cloud-Project/blob/master/Readme.md#1%E8%B7%AF%E7%94%B1router?_blank)，import方式相比于require，import是编译时加载，输出的是对一个模块的引用，效率更高。
+* webpack官方文档：[webpack中使用import()](https://webpack.docschina.org/guides/code-splitting/#%E5%8A%A8%E6%80%81%E5%AF%BC%E5%85%A5-dynamic-imports-?_blank)  
+* vue官方文档：[路由懒加载使用import()](https://router.vuejs.org/zh/guide/advanced/lazy-loading.html?_blank)  
 ```javascript
 // 下面2行代码，没有指定webpackChunkName，每个组件打包成一个js文件。
 const ImportFuncDemo1 = () => import('../components/ImportFuncDemo1')
@@ -69,7 +69,7 @@ export default new VueRouter({
 ```
 
 ### 3.webpack提供的require.ensure()
-vue-router配置路由，使用webpack的[require.ensure](https://webpack.docschina.org/api/module-methods#require-ensure){:target="blank"}技术，也可以实现按需加载。但不太推荐使用，这里只简单说一哈。  
+vue-router配置路由，使用webpack的[require.ensure](https://webpack.docschina.org/api/module-methods#require-ensure?_blank)技术，也可以实现按需加载。但不太推荐使用，这里只简单说一哈。  
 ```javascript
 {
     path: '/promisedemo',
